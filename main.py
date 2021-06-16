@@ -1,7 +1,7 @@
 import sys
 import json
 from service import SPService
-from parser import SPParser
+from myparser import SPParser
 
 if __name__ == "__main__":
 
@@ -33,6 +33,10 @@ if __name__ == "__main__":
         result = parser.collect_ipva_debts()
     elif debt_option == "dpvat":
         result = parser.collect_insurance_debts()
+    elif debt_option == "licensing":
+        result = parser.collect_licensing_debts()
+    elif debt_option == "all":
+        result = parser.collect_all_debts()
     else:
         print("Opção inválida")
         sys.exit(1)
